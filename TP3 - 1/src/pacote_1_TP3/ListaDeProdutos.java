@@ -8,12 +8,10 @@ public class ListaDeProdutos {
 	
 	//Cadastro de Produtos manual
 	{
-		Produto maça = new Produto();
-		maça.nome="maça";
-		maça.categoria = lcat.categorias[0].nome;
-		maça.unidade = lmed.medidas[0].nome;
+		Produto p1 = new Produto("Biscoito", 4, "un", 8.96, "Lanches");
 		
-		produtos [0] = maça;
+		
+		produtos [0] = p1;
 	}
 
 }

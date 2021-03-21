@@ -1,17 +1,13 @@
 package pacote_1_TP3;
 
-public class Lista {
+public interface Lista {
 
-	void adicionarItens(){
-		
-	}
+	void adicionarItens();
 	
-	void exlcuirItens() {
+	void exlcuirItens();
 		
-	}
 	
-	void editarItens() {
-		
-	}
+	
+	void editarItens();
 }
 
