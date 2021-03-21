@@ -8,7 +8,9 @@ public class Produto {
 	double preco;
 	String categoria;
 	
-//Metodos
+	
+	
+//Metodos (to pensando em colocar os métodos como comprar do tipo boolean e cadastrar, alterar e excluir nas listas)
 	void cadastrar() {
 		
 	}
