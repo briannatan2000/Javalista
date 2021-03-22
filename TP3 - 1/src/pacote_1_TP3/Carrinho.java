@@ -1,5 +1,7 @@
 package pacote_1_TP3;
 
+import java.util.Arrays;
+
 public class Carrinho {
 	//Atributos
 	private double precoTotal;
@@ -22,6 +24,11 @@ public class Carrinho {
 	}
 	public void setProdutos(Produto[] produtos) {
 		this.produtos = produtos;
+	}
+
+	@Override
+	public String toString() {
+		return "Preço total do carrinho= " + precoTotal + ", produtos=" + Arrays.toString(produtos);
 	}
 	
 	
