@@ -9,7 +9,7 @@ public class Produto {
 	private String categoria;
 	
 	
-//Metodos (to pensando em colocar os métodos como comprar do tipo boolean e cadastrar, alterar e excluir nas listas)
+//Metodos (to pensando em colocar os mÃ©todos como comprar do tipo boolean e cadastrar, alterar e excluir nas listas)
 	
 	public Produto(String a, int b, String c, double d, String e){
 		nome = a;
@@ -52,8 +52,10 @@ public class Produto {
 
 	@Override
 	public String toString() {
-		return  "Nome do Produto=" + nome + "\nQuantidade=" + quantidade + "\n Unidade=" + unidade + "\nPreco=" + preco
-				+ "\nCategoria=" + categoria + "\n";
+
+		return  "Nome do Produto= " + nome + "\nQuantidade= " + quantidade + "\n Unidade= " + unidade + "\nPreco= " + preco
+				+ "\nCategoria= " + categoria + "\n";
+
 	}
 
 	}

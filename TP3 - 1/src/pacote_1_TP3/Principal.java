@@ -6,6 +6,7 @@ public class Principal {
 	
 	public static void main(String[] args) {
 		
+
 		
 		ListaDeProdutos lp = new ListaDeProdutos();
 		ListaDeMedidas lmed= new ListaDeMedidas();
@@ -27,5 +28,6 @@ public class Principal {
 		
 		
 		
+
 	}
 }

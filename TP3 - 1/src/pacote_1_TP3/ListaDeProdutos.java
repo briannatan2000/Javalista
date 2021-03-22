@@ -13,6 +13,7 @@ public class ListaDeProdutos implements Lista{
 	//Cadastro de Produtos manual
 	{
 		Produto p1 = new Produto("Biscoito", 4, "un", 8.96, "Lanches");
+
 		
 		
 		produtos [i] = p1;
@@ -23,7 +24,7 @@ public class ListaDeProdutos implements Lista{
 		// TODO Auto-generated method stub
 		
 		Scanner ler = new Scanner (System.in);
-		System.out.print("Insira o nome, quantidade, unidade de medida, preço e categoria do produto: \n");
+		System.out.print("Insira o nome, quantidade, unidade de medida, preï¿½o e categoria do produto: \n");
 		Produto novoProduto = new Produto(ler.next(), ler.nextInt(),ler.next(),ler.nextDouble(),ler.next());
 		i=i+1;
 		produtos[i]= novoProduto;
@@ -38,7 +39,7 @@ public class ListaDeProdutos implements Lista{
 		int j=0;
 		while ( j <1) {
 		Scanner ler=new Scanner (System.in);
-		System.out.print("Digite o número do produto\n");
+		System.out.print("Digite o nï¿½mero do produto\n");
 		int produtoAtual=ler.nextInt();
 		precoTotal = precoTotal + produtos[produtoAtual].getPreco()*produtos[produtoAtual].getQuantidade();
 		System.out.print("Deseja algo mais? (true or false)");
@@ -63,6 +64,11 @@ public class ListaDeProdutos implements Lista{
 	public void editarItens() {
 		// TODO Auto-generated method stub
 		
+=======
+		
+		
+		produtos [0] = p1;
+
 	}
 
 }

@@ -4,10 +4,12 @@ import java.util.Scanner;
 import java.util.List;
 import java.util.ArrayList;
 public class ListaDeCategorias implements Lista {
+
 	int i= 0;
 	
 	
 	public Categoria  categorias[] = new Categoria[2];
+
 	
 	
 	//cadastro de categoria manual
@@ -45,7 +47,5 @@ public class ListaDeCategorias implements Lista {
 		
 	}
 
-	public static void main(String[] args) {
 	
-	}
 }

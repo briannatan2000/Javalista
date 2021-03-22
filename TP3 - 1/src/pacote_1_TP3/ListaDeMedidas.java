@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class ListaDeMedidas implements Lista {
 	int i=0;
+
+
 	
 	public UnidadeDeMedida medidas[]=new UnidadeDeMedida[2];
 	
@@ -23,6 +25,24 @@ public class ListaDeMedidas implements Lista {
 		i=i+1;
 		medidas[i]= novaMedida;
 		System.out.print("Nova unidade de medida criada: " + medidas[i].nome + "\n");
+	}
+
+	@Override
+	public void exlcuirItens() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void editarItens() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void adicionarItens() {
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
