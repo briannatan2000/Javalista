@@ -6,8 +6,28 @@ public class Principal {
 	
 	public static void main(String[] args) {
 		
-		ListaDeProdutos lp = new ListaDeProdutos();
+
 		
-		System.out.println(lp.produtos[0].toString());
+		ListaDeProdutos lp = new ListaDeProdutos();
+		ListaDeMedidas lmed= new ListaDeMedidas();
+		ListaDeCategorias lcat= new ListaDeCategorias();
+		
+		//adiciona produtos
+		lp.adicionarItens();
+		
+		//adiciona medidas
+		lmed.adicionarItens();
+		
+		//adiciona categorias
+		lcat.adicionarItens();
+	
+		System.out.println(lp.produtos[1].toString());
+		
+		//Fazer compra
+		lp.fazerCompras();
+		
+		
+		
+
 	}
 }

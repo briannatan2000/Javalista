@@ -15,10 +15,12 @@ public class Categoria {
 		this.nome = nome;
 	}
 
+
 	@Override
 	public String toString() {
 		return "Nome da categoria= " + nome;
 	}
+
 	
 
 
