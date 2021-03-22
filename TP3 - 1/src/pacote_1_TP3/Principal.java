@@ -1,12 +1,31 @@
 package pacote_1_TP3;
 
 public class Principal {
+	
+
+	
 	public static void main(String[] args) {
-		Produto p1 = new Produto();
-		p1.nome = "Abacaxi";
-		p1.quantidade = 2;
-		p1.unidade = "unidade";
-		p1.preco = 4.5;
-		p1.categoria = "Frutas";
+		
+		
+		ListaDeProdutos lp = new ListaDeProdutos();
+		ListaDeMedidas lmed= new ListaDeMedidas();
+		ListaDeCategorias lcat= new ListaDeCategorias();
+		
+		//adiciona produtos
+		lp.adicionarItens();
+		
+		//adiciona medidas
+		lmed.adicionarItens();
+		
+		//adiciona categorias
+		lcat.adicionarItens();
+	
+		System.out.println(lp.produtos[1].toString());
+		
+		//Fazer compra
+		lp.fazerCompras();
+		
+		
+		
 	}
 }
