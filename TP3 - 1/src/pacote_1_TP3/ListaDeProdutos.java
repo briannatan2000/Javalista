@@ -64,10 +64,9 @@ public class ListaDeProdutos implements Lista{
 	public void editarItens() {
 		// TODO Auto-generated method stub
 		
-=======
+
 		
-		
-		produtos [0] = p1;
+
 
 	}
 
