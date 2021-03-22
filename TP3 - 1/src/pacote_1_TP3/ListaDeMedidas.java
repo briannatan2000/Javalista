@@ -39,21 +39,7 @@ public class ListaDeMedidas implements Lista {
 		
 	}
 
-	@Override
-	public void adicionarItens() {
-		// TODO Auto-generated method stub
+
 		
 	}
 
-	@Override
-	public void exlcuirItens() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void editarItens() {
-		// TODO Auto-generated method stub
-		
-	}
-}

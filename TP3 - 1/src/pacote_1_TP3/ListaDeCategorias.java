@@ -1,8 +1,7 @@
 package pacote_1_TP3;
 
 import java.util.Scanner;
-import java.util.List;
-import java.util.ArrayList;
+
 public class ListaDeCategorias implements Lista {
 
 	int i= 0;
