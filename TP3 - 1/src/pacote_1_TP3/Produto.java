@@ -7,16 +7,17 @@ public class Produto {
 	private String unidade;
 	private double preco;
 	private String categoria;
-	
+	private int id;
 	
 //Metodos (to pensando em colocar os métodos como comprar do tipo boolean e cadastrar, alterar e excluir nas listas)
 	
-	public Produto(String a, int b, String c, double d, String e){
+	public Produto(int f, String a, int b, String c, double d, String e){
 		nome = a;
 		quantidade = b;
 		unidade = c;
 		preco = d;
 		categoria = e;
+		id = f;
 	}
 	
 	public String getNome() {
@@ -53,8 +54,8 @@ public class Produto {
 	@Override
 	public String toString() {
 
-		return  "Nome do Produto= " + nome + "\nQuantidade= " + quantidade + "\n Unidade= " + unidade + "\nPreco= " + preco
-				+ "\nCategoria= " + categoria + "\n";
+		return  "ID = " + id + "Nome do Produto = " + nome + "\nQuantidade = " + quantidade + "\nUnidade = " + unidade + "\nPreco = " + preco
+				+ "\nCategoria = " + categoria + "\n";
 
 	}
 
