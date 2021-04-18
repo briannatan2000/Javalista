@@ -1,4 +1,4 @@
-package pacote_1_TP3;
+package modelo;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -28,7 +28,7 @@ public class ListaDeProdutos implements Lista{
 		id = id + 1;
 		Produto novoProduto = new Produto(id,ler.next(), ler.nextInt(),ler.next(),ler.nextDouble(),ler.next());
 		produtos.add(novoProduto);
-	
+		
 		
 	
 		System.out.print(produtos.toString()+"\n");

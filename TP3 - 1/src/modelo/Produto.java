@@ -1,4 +1,4 @@
-package pacote_1_TP3;
+package modelo;
 
 public class Produto {
 //Atributos
@@ -11,13 +11,14 @@ public class Produto {
 	
 //Metodos (to pensando em colocar os métodos como comprar do tipo boolean e cadastrar, alterar e excluir nas listas)
 	
-	public Produto(int f, String a, int b, String c, double d, String e){
-		nome = a;
-		quantidade = b;
-		unidade = c;
-		preco = d;
-		categoria = e;
-		id = f;
+	public Produto(int a, String b, int c, String d, double e, String f){
+		id = a;
+		nome = b;
+		quantidade = c;
+		unidade = d;
+		preco = e;
+		categoria = f;
+	
 	}
 	
 	public String getNome() {

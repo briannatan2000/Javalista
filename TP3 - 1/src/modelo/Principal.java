@@ -1,4 +1,4 @@
-package pacote_1_TP3;
+package modelo;
 import java.util.Scanner;
 public class Principal {
 	
@@ -19,27 +19,38 @@ public class Principal {
 			case 1: 
 			//adiciona produtos
 			lp.adicionarItens();
-			
+			System.out.print("Deseja adicionar mais? (true or false)");
+			if (ler.nextBoolean()==false) {
+				i=1;
+							
+			}
 			
 			case 2:
 			//adiciona medidas
 			lmed.adicionarItens();
-			
+			System.out.print("Deseja adicionar mais? (true or false)");
+			if (ler.nextBoolean()==false) {
+				i=1;
+							
+			}
 				
 			case 3:
 			//adiciona categorias
 			lcat.adicionarItens();
-			
+			System.out.print("Deseja adicionar mais? (true or false)");
+			if (ler.nextBoolean()==false) {
+				i=1;
+							
+			}
 				
 			case 4:
 			
 			//Fazer compra
 			lp.fazerCompras();
-			
-				
-			System.out.print("Deseja algo mais? (true or false)");
+			System.out.print("Deseja adicionar mais? (true or false)");
 			if (ler.nextBoolean()==false) {
 				i=1;
+							
 			}
 		}
 		
