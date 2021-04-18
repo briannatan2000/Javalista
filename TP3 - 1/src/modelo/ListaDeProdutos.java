@@ -10,7 +10,7 @@ public class ListaDeProdutos implements Lista{
 	public ArrayList<Produto> produtos =new ArrayList<Produto>();
 	ListaDeCategorias lcat = new ListaDeCategorias ();
 	ListaDeMedidas lmed = new ListaDeMedidas();
-	
+	Scanner ler = new Scanner (System.in);
 	
 	//Cadastro de Produtos manual
 	{
@@ -21,9 +21,9 @@ public class ListaDeProdutos implements Lista{
 
 	@Override
 	public  void adicionarItens() {
-		// TODO Auto-generated method stub
+	
 		
-		Scanner ler = new Scanner (System.in);
+		
 		System.out.print("Insira o nome, quantidade, unidade de medida, preço e categoria do produto: \n");
 		id = id + 1;
 		Produto novoProduto = new Produto(id,ler.next(), ler.nextInt(),ler.next(),ler.nextDouble(),ler.next());
@@ -41,7 +41,7 @@ public class ListaDeProdutos implements Lista{
 		
 		while (j <1){
 		
-		Scanner ler=new Scanner (System.in);
+		
 		System.out.print("Digite o ID do produto\n");
 		int produtoAtual=ler.nextInt();
 		precoTotal = precoTotal + produtos.get(produtoAtual).getPreco()*produtos.get(produtoAtual).getQuantidade();
@@ -61,12 +61,35 @@ public class ListaDeProdutos implements Lista{
 	@Override
 	public void exlcuirItens() {
 		// TODO Auto-generated method stub
-		
+		System.out.print("Qual produto você gostaria de excluir? Digite o ID conforme a abaixo:\n");
+		System.out.print(produtos.toString()+"\n");
+		produtos.remove(ler.nextInt());
 	}
 
 	@Override
 	public void editarItens() {
 		// TODO Auto-generated method stub
+		System.out.print("Qual produto você gostaria de editar? Digite o ID conforme a abaixo:\n");
+		System.out.print(produtos.toString()+"\n");
+		int id = ler.nextInt();
+		System.out.print("O que você gostaria de editar?\n (nome, quantidade, unidade de medida, categoria, preco)");
+		
+		switch (ler.next()) {
+			case "nome":
+			produtos.get(id).setNome(ler.next());
+			
+			case "quantidade":
+			produtos.get(id).setQuantidade(ler.nextInt());
+			
+			case "unidade de medida":
+				produtos.get(id).setUnidade(ler.next());
+			
+			case "categoria":
+				produtos.get(id).setCategoria(ler.next());
+			
+			case "preco":
+			produtos.get(id).setPreco(ler.nextDouble());
+		}
 		
 
 		

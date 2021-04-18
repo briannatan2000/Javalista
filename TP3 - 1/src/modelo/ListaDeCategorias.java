@@ -1,32 +1,35 @@
 package modelo;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ListaDeCategorias implements Lista {
 
-	int i= 0;
+	int id= 0;
+	Scanner ler = new Scanner (System.in);
 	
+	public ArrayList<Categoria>  categorias = new ArrayList<Categoria>();
 	
-	public Categoria  categorias[] = new Categoria[2];
 
 	
 	
 	//cadastro de categoria manual
 	{
-	Categoria fruta = new Categoria("Frutas/verduras/legumes");
+	Categoria fruta1 = new Categoria(id, "Fruta, verdura e legume");
 	
-	categorias[i]= fruta;
+	categorias.add(fruta1);
 	}
 
 	@Override
 	public void adicionarItens() {
 		// TODO Auto-generated method stub
-		Scanner ler = new Scanner (System.in);
+	
 		System.out.print("Insira o nome da nova categoria: \n");
-		Categoria novaCategoria = new Categoria(ler.next());
-		i=i+1;
-		categorias[i]= novaCategoria;
-		System.out.print("Nova categoria criada: "+ categorias[i].nome + "\n");
+		
+		id=id+1;
+		Categoria novaCategoria = new Categoria(id , ler.next());
+		categorias.add(novaCategoria);
+		System.out.print("Nova categoria criada: "+ categorias.get(id) + "\n");
 		 	
 		}
 	
@@ -36,15 +39,23 @@ public class ListaDeCategorias implements Lista {
 
 	@Override
 	public void exlcuirItens() {
-		// TODO Auto-generated method stub
-		
+		System.out.print("Qual categoria você gostaria de excluir? Digite o ID conforme a abaixo:\n");
+		System.out.print(categorias.toString()+"\n");
+		categorias.remove(ler.nextInt());
 	}
 
 	@Override
 	public void editarItens() {
-		// TODO Auto-generated method stub
+		System.out.print("Qual categoria você gostaria de editar? Digite o ID conforme a abaixo:\n");
+		System.out.print(categorias.toString()+"\n");
+		int id = ler.nextInt();
+		System.out.print("O que você gostaria de editar?\n (nome, sigla)");
 		
+		switch (ler.next()) {
+			case "nome":
+			categorias.get(id).setNome(ler.next());
+			
+		
+		}
 	}
-
-	
 }
