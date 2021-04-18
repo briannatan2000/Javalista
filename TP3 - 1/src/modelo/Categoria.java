@@ -2,9 +2,11 @@ package modelo;
 
 public class Categoria {
 	String nome;
-
-	public Categoria(String a){
-		nome = a;
+	int id;
+	
+	public Categoria(int a, String b){
+		id = a;
+		nome = b;
 	}
 	
 	public String getNome() {
@@ -18,7 +20,7 @@ public class Categoria {
 
 	@Override
 	public String toString() {
-		return "Nome da categoria= " + nome;
+		return "ID: " + id + "\nNome da categoria= " + nome + "\n";
 	}
 
 	

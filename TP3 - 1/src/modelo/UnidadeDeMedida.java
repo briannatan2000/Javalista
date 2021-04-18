@@ -4,14 +4,15 @@ public class UnidadeDeMedida {
 
 int id;
 String nome;
+String sigla;
 
 
 
 
-
-public UnidadeDeMedida(int a , String b){
+public UnidadeDeMedida(int a , String b, String c){
 	id = a;
 	nome = b;
+	sigla = c;
 }
 
 public String getNome() {
@@ -22,21 +23,22 @@ public void setNome(String nome) {
 	this.nome = nome;
 }
 
-public UnidadeDeMedida(int b){
-	id = b;
+
+
+
+
+
+public String getSigla() {
+	return sigla;
 }
 
-public int getId() {
-	return id;
-}
-
-public void setId(int id) {
-	this.id = id;
+public void setSigla(String sigla) {
+	this.sigla = sigla;
 }
 
 @Override
 public String toString() {
-	return "ID: " + id + "\nNome da unidade de medida = " + nome +"\n";
+	return "ID: " + id + "\nNome da unidade de medida = " + nome +"\nSigla: " + sigla + "\n";
 }
 
 
