@@ -1,19 +1,20 @@
-package pacote_1_TP3;
+package modelo;
 
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class ListaDeMedidas implements Lista {
 	int i=0;
 
 
 	
-	public UnidadeDeMedida medidas[]=new UnidadeDeMedida[2];
+	public ArrayList<UnidadeDeMedida> medidas=new ArrayList<UnidadeDeMedida>();
 	
 	//cadastro de medidas manual
 	{
-	UnidadeDeMedida quilograma = new UnidadeDeMedida("kg");
+	UnidadeDeMedida quilograma = new UnidadeDeMedida(0,"kg");
 
-	medidas[i]= quilograma;
+	medidas.add(quilograma);
 	}
 
 	@Override
@@ -21,10 +22,10 @@ public class ListaDeMedidas implements Lista {
 		// TODO Auto-generated method stub
 		Scanner ler = new Scanner (System.in);
 		System.out.print("Insira o nome da nova medida: \n");
-		UnidadeDeMedida novaMedida = new UnidadeDeMedida(ler.next());
 		i=i+1;
-		medidas[i]= novaMedida;
-		System.out.print("Nova unidade de medida criada: " + medidas[i].nome + "\n");
+		UnidadeDeMedida novaMedida = new UnidadeDeMedida(i,ler.next());
+		medidas.add(novaMedida);
+		System.out.print(medidas.get(i));
 	}
 
 	@Override

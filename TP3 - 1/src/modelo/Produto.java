@@ -1,4 +1,4 @@
-package pacote_1_TP3;
+package modelo;
 
 public class Produto {
 //Atributos
@@ -18,7 +18,7 @@ public class Produto {
 		unidade = d;
 		preco = e;
 		categoria = f;
-		System.out.print("teste");
+	
 	}
 	
 	public String getNome() {

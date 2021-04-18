@@ -1,4 +1,4 @@
-package pacote_1_TP3;
+package modelo;
 
 public interface Lista {
 
