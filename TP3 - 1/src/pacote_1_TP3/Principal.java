@@ -37,9 +37,6 @@ public class Principal {
 			lp.fazerCompras();
 			
 				
-			System.out.print("Deseja algo mais? (true or false)");
-			if (ler.nextBoolean()==false) {
-				i=1;
 			}
 		}
 		
