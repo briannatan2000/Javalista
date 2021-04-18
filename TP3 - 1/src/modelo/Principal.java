@@ -1,17 +1,18 @@
 package modelo;
 import java.util.Scanner;
+import controle.*;
 public class Principal {
 	
 
 	
 	public static void main(String[] args) {
-		
+		Scanner ler = new Scanner (System.in);
 		int i = 0;
 		
-		ListaDeProdutos lp = new ListaDeProdutos();
-		ListaDeMedidas lmed= new ListaDeMedidas();
-		ListaDeCategorias lcat= new ListaDeCategorias();
-		Scanner ler = new Scanner (System.in);
+		ControleProduto lp = new ControleProduto();
+		ControleMedida lmed= new ControleMedida();
+		ControleCategoria lcat= new ControleCategoria();
+		
 		
 		while ( i<1) {
 			switch (ler.nextInt()) {
