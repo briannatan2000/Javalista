@@ -17,9 +17,9 @@ public class Home implements ActionListener {
 	public Home() {
 		titulo.setFont(new Font("Arial", Font.BOLD, 20));
 		titulo.setBounds(120, 10, 150, 30);
-		lista.setBounds(140, 100, 100, 30);
+		opcoes.setBounds(140, 100, 100, 30);
 		historico.setBounds(140, 150, 100, 30);
-		opcoes.setBounds(140, 50, 100, 30);
+		lista.setBounds(140, 50, 100, 30);
 		
 		janela.setLayout(null);
 		
@@ -45,13 +45,20 @@ public class Home implements ActionListener {
 		Object src = e.getSource();
 		
 		if(src == lista)
-			new ViewMenu();
+			JOptionPane.showMessageDialog(null, 
+					"Ainda precisam ser implementadas as funcionalidades\n"
+					+ "relacionadas a curso e a matrícula", null, 
+					JOptionPane.INFORMATION_MESSAGE);
 		
 		if(src == historico)
-			new Historico();
+			JOptionPane.showMessageDialog(null, 
+					"Ainda precisam ser implementadas as funcionalidades\n"
+					+ "relacionadas a curso e a matrícula", null, 
+					JOptionPane.INFORMATION_MESSAGE);
 		
 		if(src == opcoes)
-			new Opcoes();
+			new TelaOpcoes().main(null);;
+		
 	}
 }
 
