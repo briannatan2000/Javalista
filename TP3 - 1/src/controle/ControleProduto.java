@@ -20,6 +20,9 @@ public class ControleProduto implements Lista {
 
 			produtos.add(p1);
 		}
+		public String getNome() {
+			return produtos.get(id).getNome();
+		}
 
 		@Override
 		public  void adicionarItens() {
