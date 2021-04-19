@@ -6,9 +6,13 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
-public class ViewMenu {
+public class Historico {
 
 	
+	 
+
+
+
 
 		public static void main(String[] args) {
 			JFrame frame = new JFrame("Demo application");
