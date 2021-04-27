@@ -109,7 +109,7 @@ public class TelaEditaveis implements ActionListener, ListSelectionListener {
 		
 		//Cadastro de novo aluno
 		if(src == cadastroAluno)
-			new TelaOpcoes().actionPerformed(e);
+			new TelaDetalhe().inserirEditar(1, dados, this, dados.getProdutos().size()+1);
 
 
 
