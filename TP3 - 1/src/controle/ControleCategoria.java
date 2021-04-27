@@ -57,6 +57,7 @@ public class ControleCategoria implements Lista {
 				case "nome":
 				categorias.get(id).setNome(ler.next());
 				
+		
 			
 			}
 		}
