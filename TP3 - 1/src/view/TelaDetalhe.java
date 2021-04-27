@@ -129,13 +129,18 @@ public class TelaDetalhe implements ActionListener {
 				novoDado[4] =  valorPreco.getText();
 				novoDado[5] =  valorCat.getText();
 
-				if (opcao == 1 || opcao == 3) {
+				if (opcao == 1){
 					
 					
 					Produto novoProduto = new Produto(dados.getProdutos().size()+1,novoDado[1],Integer.parseInt(novoDado[2]),novoDado[3],Double.parseDouble(novoDado[4]), novoDado[5]);
 					dados.getProdutos().add(novoProduto);
-					res = false;
+					res = true;
 				} 
+				if (opcao == 3) {
+					Produto novoProduto = new Produto(posicao,novoDado[1],Integer.parseInt(novoDado[2]),novoDado[3],Double.parseDouble(novoDado[4]), novoDado[5]);
+					dados.getProdutos().set(posicao, novoProduto);
+					res = true;
+				}
 
 				if(res) {
 					mensagemSucessoCadastro();
