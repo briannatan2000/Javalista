@@ -12,7 +12,9 @@ public class Home implements ActionListener {
 	private static JButton lista = new JButton("Nova Lista");
 	private static JButton historico = new JButton("Histórico");
 	private static JButton opcoes = new JButton("Opções");
-	public static ControleProduto dados = new ControleProduto();
+	
+
+	
 	
 	public Home() {
 		titulo.setFont(new Font("Arial", Font.BOLD, 20));

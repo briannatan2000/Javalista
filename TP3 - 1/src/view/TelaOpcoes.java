@@ -12,6 +12,7 @@ public class TelaOpcoes implements ActionListener {
 	private static JButton prod = new JButton("Produtos");
 	private static JButton cat = new JButton("Categoria");
 	private static JButton uniMed = new JButton("Unidade de Medida");
+	public static ControleDados dados = new ControleDados();
 
 	
 	public  TelaOpcoes() {
@@ -46,11 +47,9 @@ public class TelaOpcoes implements ActionListener {
 		Object src = e.getSource();
 		
 		if(src == prod)
-			//new TelaPessoa().mostrarDados(dados, 1);
-			JOptionPane.showMessageDialog(null, 
-					"Ainda precisam ser implementadas as funcionalidades\n"
-					+ "relacionadas a curso e a matrícula", null, 
-					JOptionPane.INFORMATION_MESSAGE);
+			new TelaEditaveis().mostrarDados(dados, 1);
+		
+
 		if(src == uniMed)
 			//new TelaPessoa().mostrarDados(dados, 2);
 			JOptionPane.showMessageDialog(null, 

@@ -14,12 +14,10 @@ public class ControleProduto implements Lista {
 		ControleMedida lmed = new ControleMedida();
 		Scanner ler = new Scanner (System.in);
 		
-		//Cadastro de Produtos manual
-		{
-			Produto p1 = new Produto(0,"Biscoito", 4, "un", 8.96, "Lanches");
-
-			produtos.add(p1);
+		public ControleProduto(ControleDados d) {
+			produtos = d.getProdutos();
 		}
+
 		public String getNome() {
 			return produtos.get(id).getNome();
 		}
