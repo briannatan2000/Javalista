@@ -2,8 +2,10 @@ package view;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -19,11 +21,11 @@ public class TelaDetalhe implements ActionListener {
 	private JLabel labelQtd = new JLabel("Quantidade: ");
 	private JTextField valorQtd;
 	private JLabel labelUnid = new JLabel("Unidade: ");
-	private JTextField valorUnid;
+	private JComboBox valorUnid;
 	private JLabel labelPreco = new JLabel("Preço: ");
 	private JTextField valorPreco;
 	private JLabel labelCat = new JLabel("Categoria: ");
-	private JTextField valorCat;
+	private JComboBox valorCat;
 	private JButton botaoExcluir = new JButton("Excluir");
 	private JButton botaoSalvar = new JButton("Salvar");
 	private String[] novoDado = new String[9];
@@ -31,6 +33,7 @@ public class TelaDetalhe implements ActionListener {
 	private int posicao;
 	private int opcao;
 	private String s;
+	
 
 	public void inserirEditar(int op, ControleDados d, 
 			TelaEditaveis p, int pos) {
@@ -39,28 +42,36 @@ public class TelaDetalhe implements ActionListener {
 		posicao = pos;
 		dados = d;
 
-		if (op == 1) s = "Cadastro de Aluno";
-		if (op == 3) s = "Detalhe de Aluno";
+		if (op == 1) s = "Cadastro de Produto";
+		if (op == 3) s = "Detalhe de Produto";
 		
 
 		janela = new JFrame(s);
 
+		String[] nomeMed = new String[dados.getMedidas().size()];
+		for (int i=0; i<dados.getMedidas().size();i++) {
+			nomeMed[i]= dados.getMedidas().get(i).getNome();
+		}
+		String[] nomeCat = new String[dados.getCategoria().size()];
+		for (int i=0; i<dados.getCategoria().size();i++) {
+			nomeCat[i]= dados.getCategoria().get(i).getNome();
+		}
 		//Preenche dados com dados do aluno clicado
 		if (op == 3) {
 			valorNome = new JTextField(dados.getProdutos().get(pos).getNome(), 200);
 			valorQtd = new JTextField(String.valueOf(dados.getProdutos().get(pos).getQuantidade()),200);
-			valorUnid = new JTextField(String.valueOf(dados.getProdutos().get(pos).getUnidade()), 200);
+			valorUnid = new JComboBox(nomeMed);
 			valorPreco = new JTextField(String.valueOf(dados.getProdutos().get(pos).getPreco()), 200);
-			valorCat = new JTextField(String.valueOf(dados.getProdutos().get(pos).getCategoria()), 200);
-				
+			valorCat = new JComboBox(nomeCat);
+			
 
 		}  else { //Não preenche com dados
 
 			valorNome = new JTextField(200);
 			valorQtd = new JTextField(200);
-			valorUnid = new JTextField(200);
+			valorUnid = new JComboBox(nomeMed);
 			valorPreco = new JTextField(200);
-			valorCat = new JTextField(200);
+			valorCat = new JComboBox(nomeCat);
 			botaoSalvar.setBounds(245, 175, 115, 30);
 		}
 
@@ -125,9 +136,9 @@ public class TelaDetalhe implements ActionListener {
 
 				novoDado[1] =  valorNome.getText();
 				novoDado[2] =  valorQtd.getText();
-				novoDado[3] =  valorUnid.getText();
+				novoDado[3] =  valorUnid.getName();
 				novoDado[4] =  valorPreco.getText();
-				novoDado[5] =  valorCat.getText();
+				novoDado[5] =  valorCat.getName();
 
 				if (opcao == 1){
 					
@@ -159,7 +170,7 @@ public class TelaDetalhe implements ActionListener {
 
 			if (opcao == 3) {//exclui aluno
 				dados.getProdutos().remove(posicao);
-				res = false;
+				res = true;
 				if (res) mensagemSucessoExclusao(); 
 				else mensagemErroExclusaoAluno(); 
 			}

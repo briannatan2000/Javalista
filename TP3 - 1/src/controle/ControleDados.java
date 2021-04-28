@@ -26,7 +26,9 @@ public class ControleDados {
 		return this.d.getCategoria();
 	}
 	
-
+	public ArrayList<UnidadeDeMedida> getMedidas() {
+		return this.d.getMedidas();
+	}
 
 
 	

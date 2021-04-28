@@ -13,14 +13,27 @@ public class Dados {
 	
 	public void fillWithSomeData() {
 		
-			UnidadeDeMedida medida1 = new UnidadeDeMedida(qtdMed,"quilograma", "kg");
+			UnidadeDeMedida medida1 = new UnidadeDeMedida(qtdMed,"Quilograma", "kg");
+			qtdMed+=1;
+			UnidadeDeMedida medida2 = new UnidadeDeMedida(qtdMed,"Unidade", "un");
+			qtdMed+=1;
+			UnidadeDeMedida medida3 = new UnidadeDeMedida(qtdMed,"Mililitro", "ml");
 
 			medidas.add(medida1);
+			medidas.add(medida2);
+			medidas.add(medida3);
 			
-			Categoria fruta1 = new Categoria(qtdCat, "Fruta, verdura e legume");
+			Categoria categoria1 = new Categoria(qtdCat, "Fruta, verdura e legume");
+			qtdCat+=1;
+			Categoria categoria2 = new Categoria(qtdCat, "Lanches");
+			qtdCat+=1;
+			Categoria categoria3 = new Categoria(qtdCat, "Produtos de Limpeza");
 			
-			categorias.add(fruta1);
-			Produto p1 = new Produto(qtdProd,"Biscoito", 4, "un", 8.96, "Lanches");
+			categorias.add(categoria1);
+			categorias.add(categoria2);
+			categorias.add(categoria3);
+			
+			Produto p1 = new Produto(qtdProd,"Biscoito", 4, "un", 8.96, categoria2.getNome());
 
 			produtos.add(p1);
 	}
