@@ -29,7 +29,7 @@ public class ControleProduto implements Lista {
 			
 			System.out.print("Insira o nome, quantidade, unidade de medida, preço e categoria do produto: \n");
 			id = id + 1;
-			Produto novoProduto = new Produto(id,ler.next(), ler.nextInt(),ler.next(),ler.nextDouble(),ler.next());
+			Produto novoProduto = new Produto(id,ler.next(), ler.nextInt(),ler.next(),ler.nextDouble(),ler.next(),0,0);
 			produtos.add(novoProduto);
 			
 			

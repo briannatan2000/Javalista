@@ -8,16 +8,20 @@ public class Produto {
 	private double preco;
 	private String categoria;
 	private int id;
+	private int posCat;
+	private int posMed;
 	
 //Metodos (to pensando em colocar os métodos como comprar do tipo boolean e cadastrar, alterar e excluir nas listas)
 	
-	public Produto(int a, String b, int c, String d, double e, String f){
+	public Produto(int a, String b, int c, String d, double e, String f, int g, int h){
 		id = a;
 		nome = b;
 		quantidade = c;
 		unidade = d;
 		preco = e;
 		categoria = f;
+		posCat = g;
+		posMed = h;
 	
 	}
 	
@@ -51,6 +55,20 @@ public class Produto {
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
 	}
+	public int getPosCat() {
+		return posCat;
+	}
+	public void setPosCat(int PosCat) {
+		this.posCat = posCat;
+	}
+	
+	public int getPosMed() {
+		return posMed;
+	}
+	public void setPosMed(int PosMed) {
+		this.posMed = posMed;
+	}
+	
 
 	@Override
 	public String toString() {

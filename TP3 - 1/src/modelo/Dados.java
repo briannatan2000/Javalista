@@ -33,7 +33,7 @@ public class Dados {
 			categorias.add(categoria2);
 			categorias.add(categoria3);
 			
-			Produto p1 = new Produto(qtdProd,"Biscoito", 4, "un", 8.96, categoria2.getNome());
+			Produto p1 = new Produto(qtdProd,"Biscoito", 4, "un", 8.96, categoria2.getNome(),0, 0);
 
 			produtos.add(p1);
 	}
@@ -74,6 +74,8 @@ public class Dados {
 		medidas.add(novaMedida);
 
 	}
+	
+	
 	
 	
 
