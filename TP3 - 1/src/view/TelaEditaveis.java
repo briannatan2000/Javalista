@@ -19,6 +19,7 @@ public class TelaEditaveis implements ActionListener, ListSelectionListener {
 	private JList<String> listaAlunosCadastrados;
 	private JList<String> listaProfsCadastrados;
 	private ArrayList<String> listaNomes = new ArrayList<String>();
+	
 
 	public void mostrarDados(ControleDados d, int op){
 		dados = d;
@@ -110,7 +111,7 @@ public class TelaEditaveis implements ActionListener, ListSelectionListener {
 		//Cadastro de novo aluno
 		if(src == cadastroAluno)
 			new TelaDetalhe().inserirEditar(1, dados, this, dados.getProdutos().size()+1);
-
+				
 
 
 		// Atualiza a lista de nomes de alunos mostrada no JList
@@ -133,9 +134,11 @@ public class TelaEditaveis implements ActionListener, ListSelectionListener {
 		Object src = e.getSource();
 
 		if(e.getValueIsAdjusting() && src == listaAlunosCadastrados) {
-			new TelaDetalhe().inserirEditar(3, dados, this, 
+			 new TelaDetalhe().inserirEditar(3, dados, this, 
 					listaAlunosCadastrados.getSelectedIndex());
+			
 		}
+		
 
 	}
 

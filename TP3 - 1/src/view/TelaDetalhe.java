@@ -33,9 +33,10 @@ public class TelaDetalhe implements ActionListener {
 	private int posicao;
 	private int opcao;
 	private String s;
-	
+	private int posicaoCat=0;
+	private int posicaoMed =0;
 
-	public void inserirEditar(int op, ControleDados d, 
+	public int inserirEditar(int op, ControleDados d, 
 			TelaEditaveis p, int pos) {
 
 		opcao = op;
@@ -56,14 +57,21 @@ public class TelaDetalhe implements ActionListener {
 		for (int i=0; i<dados.getCategoria().size();i++) {
 			nomeCat[i]= dados.getCategoria().get(i).getNome();
 		}
+		
+		valorCat = new JComboBox(nomeCat);
+		valorUnid = new JComboBox(nomeMed);
 		//Preenche dados com dados do aluno clicado
 		if (op == 3) {
+			posicaoCat = dados.getProdutos().get(pos).getPosCat();
+			posicaoMed = dados.getProdutos().get(pos).getPosMed();
 			valorNome = new JTextField(dados.getProdutos().get(pos).getNome(), 200);
 			valorQtd = new JTextField(String.valueOf(dados.getProdutos().get(pos).getQuantidade()),200);
-			valorUnid = new JComboBox(nomeMed);
+			valorUnid.setSelectedIndex(posicaoMed);
 			valorPreco = new JTextField(String.valueOf(dados.getProdutos().get(pos).getPreco()), 200);
-			valorCat = new JComboBox(nomeCat);
+			valorCat.setSelectedIndex(posicaoCat);
 			
+			
+		
 
 		}  else { //Não preenche com dados
 
@@ -121,6 +129,7 @@ public class TelaDetalhe implements ActionListener {
 
 		botaoSalvar.addActionListener(this);
 		botaoExcluir.addActionListener(this);
+		return posicaoCat;
 	}
 
 
@@ -141,14 +150,16 @@ public class TelaDetalhe implements ActionListener {
 				novoDado[5] =  valorCat.getName();
 
 				if (opcao == 1){
-					
-					
-					Produto novoProduto = new Produto(dados.getProdutos().size()+1,novoDado[1],Integer.parseInt(novoDado[2]),novoDado[3],Double.parseDouble(novoDado[4]), novoDado[5]);
+					posicaoMed = valorUnid.getSelectedIndex();
+					posicaoCat = valorCat.getSelectedIndex();
+					Produto novoProduto = new Produto(dados.getProdutos().size()+1,novoDado[1],Integer.parseInt(novoDado[2]),novoDado[3],Double.parseDouble(novoDado[4]), novoDado[5], posicaoCat,posicaoMed);
 					dados.getProdutos().add(novoProduto);
 					res = true;
 				} 
 				if (opcao == 3) {
-					Produto novoProduto = new Produto(posicao,novoDado[1],Integer.parseInt(novoDado[2]),novoDado[3],Double.parseDouble(novoDado[4]), novoDado[5]);
+					posicaoCat = valorCat.getSelectedIndex();
+					posicaoMed = valorUnid.getSelectedIndex();
+					Produto novoProduto = new Produto(posicao,novoDado[1],Integer.parseInt(novoDado[2]),novoDado[3],Double.parseDouble(novoDado[4]), novoDado[5],posicaoCat, posicaoMed);
 					dados.getProdutos().set(posicao, novoProduto);
 					res = true;
 				}
