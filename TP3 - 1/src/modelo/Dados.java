@@ -9,7 +9,9 @@ public class Dados {
 	private int qtdCat = 0;
 	private ArrayList<UnidadeDeMedida> medidas = new ArrayList<UnidadeDeMedida>();
 	private int qtdMed = 0;
-	
+	private ArrayList<Produto> carrinho = new ArrayList<Produto>();
+	private int qtdCar = 0;
+	private double preco;
 	
 	public void fillWithSomeData() {
 		
@@ -74,7 +76,23 @@ public class Dados {
 		medidas.add(novaMedida);
 
 	}
-	
+	public  ArrayList<Produto> getCarrinho() {
+		return carrinho;
+	}
+	public void inserirCarrinho(Produto novoProduto) {
+		carrinho.add(novoProduto);
+
+	}
+	public double getPrecoCarrinho() {
+		return preco;
+	}
+	public void setPrecoCarrinho(float novoPreco) {
+		preco=novoPreco;
+	}
+
+	public void adicionarPrecoTotal (double precoProduto) {
+		preco+=precoProduto;
+	}
 	
 	
 	

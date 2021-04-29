@@ -18,8 +18,8 @@ public class TelaOpcoes implements ActionListener {
 	public  TelaOpcoes() {
 		titulo.setFont(new Font("Arial", Font.BOLD, 20));
 		titulo.setBounds(120, 10, 150, 30);
-		cat.setBounds(140, 100, 100, 30);
-		uniMed.setBounds(140, 150, 100, 30);
+		uniMed.setBounds(140, 100, 100, 30);
+		cat.setBounds(140, 150, 100, 30);
 		prod.setBounds(140, 50, 100, 30);
 		
 		janela.setLayout(null);
@@ -51,11 +51,8 @@ public class TelaOpcoes implements ActionListener {
 		
 
 		if(src == uniMed)
-			//new TelaPessoa().mostrarDados(dados, 2);
-			JOptionPane.showMessageDialog(null, 
-					"Ainda precisam ser implementadas as funcionalidades\n"
-					+ "relacionadas a curso e a matrícula", null, 
-					JOptionPane.INFORMATION_MESSAGE);
+			new TelaEditaveis().mostrarDados(dados, 2);
+			
 		if(src == cat)
 			JOptionPane.showMessageDialog(null, 
 					"Ainda precisam ser implementadas as funcionalidades\n"

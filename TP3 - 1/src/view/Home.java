@@ -12,6 +12,7 @@ public class Home implements ActionListener {
 	private static JButton lista = new JButton("Nova Lista");
 	private static JButton historico = new JButton("Histórico");
 	private static JButton opcoes = new JButton("Opções");
+	public static ControleDados dados = new ControleDados();
 	
 
 	
@@ -47,10 +48,7 @@ public class Home implements ActionListener {
 		Object src = e.getSource();
 		
 		if(src == lista)
-			JOptionPane.showMessageDialog(null, 
-					"Ainda precisam ser implementadas as funcionalidades\n"
-					+ "relacionadas a curso e a matrícula", null, 
-					JOptionPane.INFORMATION_MESSAGE);
+		new TelaEditaveis().mostrarDados(dados, 4);
 		
 		if(src == historico)
 			JOptionPane.showMessageDialog(null, 
@@ -59,7 +57,7 @@ public class Home implements ActionListener {
 					JOptionPane.INFORMATION_MESSAGE);
 		
 		if(src == opcoes)
-			new TelaOpcoes().main(null);;
+			new TelaOpcoes().main(null);
 		
 	}
 }

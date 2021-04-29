@@ -3,27 +3,18 @@ package view;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import controle.*;
-import modelo.Produto;
+import modelo.Categoria;
 
-public class TelaDetalhe implements ActionListener {
+public class TelaCategoria implements ActionListener {
 
 	private JFrame janela;
 	private JLabel labelNome = new JLabel("Nome: ");
 	private JTextField valorNome;
-	private JLabel labelQtd = new JLabel("Quantidade: ");
-	private JTextField valorQtd;
-	private JLabel labelUnid = new JLabel("Unidade: ");
-	private JComboBox valorUnid;
-	private JLabel labelPreco = new JLabel("Preço: ");
-	private JTextField valorPreco;
-	private JLabel labelCat = new JLabel("Categoria: ");
-	private JComboBox valorCat;
 	private JButton botaoExcluir = new JButton("Excluir");
 	private JButton botaoSalvar = new JButton("Salvar");
 	private String[] novoDado = new String[9];
@@ -31,8 +22,7 @@ public class TelaDetalhe implements ActionListener {
 	private int posicao;
 	private int opcao;
 	private String s;
-	private int posicaoCat=0;
-	private int posicaoMed =0;
+
 
 	public void inserirEditar(int op, ControleDados d, 
 			TelaEditaveis p, int pos) {
@@ -41,56 +31,30 @@ public class TelaDetalhe implements ActionListener {
 		posicao = pos;
 		dados = d;
 
-		if (op == 1) s = "Cadastro de Produto";
-		if (op == 2) s = "Detalhe de Produto";
+		if (op == 1) s = "Cadastro de Medidas";
+		if (op == 2) s = "Detalhe da Medida";
 		
 
 		janela = new JFrame(s);
 
-		String[] nomeMed = new String[dados.getMedidas().size()];
-		for (int i=0; i<dados.getMedidas().size();i++) {
-			nomeMed[i]= dados.getMedidas().get(i).getNome();
-		}
-		String[] nomeCat = new String[dados.getCategoria().size()];
-		for (int i=0; i<dados.getCategoria().size();i++) {
-			nomeCat[i]= dados.getCategoria().get(i).getNome();
-		}
-		
-		valorCat = new JComboBox(nomeCat);
-		valorUnid = new JComboBox(nomeMed);
-		//Preenche dados com dados do aluno clicado
-		if (op == 2) {
-			posicaoCat = dados.getProdutos().get(pos).getPosCat();
-			posicaoMed = dados.getProdutos().get(pos).getPosMed();
-			valorNome = new JTextField(dados.getProdutos().get(pos).getNome(), 200);
-			valorQtd = new JTextField(String.valueOf(dados.getProdutos().get(pos).getQuantidade()),200);
-			valorUnid.setSelectedIndex(posicaoMed);
-			valorPreco = new JTextField(String.valueOf(dados.getProdutos().get(pos).getPreco()), 200);
-			valorCat.setSelectedIndex(posicaoCat);
-			
-			
+
 		
 
+		//Preenche dados com dados da Categoria clicado
+		if (op == 2) {
+
+			valorNome = new JTextField(dados.getCategoria().get(pos).getNome(), 200);
+			
 		}  else { //Não preenche com dados
 
 			valorNome = new JTextField(200);
-			valorQtd = new JTextField(200);
-			valorUnid = new JComboBox(nomeMed);
-			valorPreco = new JTextField(200);
-			valorCat = new JComboBox(nomeCat);
 			botaoSalvar.setBounds(245, 175, 115, 30);
 		}
 
 		labelNome.setBounds(30, 20, 150, 25);
 		valorNome.setBounds(180, 20, 180, 25);
-		labelQtd.setBounds(30, 50, 150, 25);
-		valorQtd.setBounds(180, 50, 180, 25);
-		labelUnid.setBounds(30, 80, 150, 25);
-		valorUnid.setBounds(180, 80, 180, 25);
-		labelPreco.setBounds(30, 110, 150, 25);
-		valorPreco.setBounds(180, 110, 180, 25);
-		labelCat.setBounds(30, 140, 150, 25);
-		valorCat.setBounds(180, 140, 150, 25);
+
+		//Coloca campos relacionados a valor hora/aula se professor
 
 
 		//Coloca botoes de excluir e salvar
@@ -102,12 +66,6 @@ public class TelaDetalhe implements ActionListener {
 
 		this.janela.add(labelNome);
 		this.janela.add(valorNome);
-		this.janela.add(labelUnid);
-		this.janela.add(valorUnid);
-		this.janela.add(labelPreco);
-		this.janela.add(valorPreco);
-		this.janela.add(labelCat);
-		this.janela.add(valorCat);
 		this.janela.add(botaoSalvar);
 
 		this.janela.setLayout(null);
@@ -117,6 +75,7 @@ public class TelaDetalhe implements ActionListener {
 
 		botaoSalvar.addActionListener(this);
 		botaoExcluir.addActionListener(this);
+	
 	}
 
 
@@ -126,28 +85,22 @@ public class TelaDetalhe implements ActionListener {
 			try {
 				boolean res=false;
 				if(opcao == 1) //cadastro de novo aluno
-					novoDado[0] = Integer.toString(dados.getProdutos().size());
+					novoDado[0] = Integer.toString(dados.getCategoria().size());
 				else // edicao de dado existente
 					novoDado[0] = Integer.toString(posicao);
 
 				novoDado[1] =  valorNome.getText();
-				novoDado[2] =  valorQtd.getText();
-				novoDado[3] =  valorUnid.getName();
-				novoDado[4] =  valorPreco.getText();
-				novoDado[5] =  valorCat.getName();
-
+				
 				if (opcao == 1){
-					posicaoMed = valorUnid.getSelectedIndex();
-					posicaoCat = valorCat.getSelectedIndex();
-					Produto novoProduto = new Produto(dados.getProdutos().size()+1,novoDado[1],Integer.parseInt(novoDado[2]),novoDado[3],Double.parseDouble(novoDado[4]), novoDado[5], posicaoCat,posicaoMed);
-					dados.getProdutos().add(novoProduto);
+
+					Categoria novaCategoria = new Categoria(dados.getCategoria().size()+1,novoDado[1]);
+					dados.getCategoria().add(novaCategoria);
 					res = true;
 				} 
 				if (opcao == 2) {
-					posicaoCat = valorCat.getSelectedIndex();
-					posicaoMed = valorUnid.getSelectedIndex();
-					Produto novoProduto = new Produto(posicao,novoDado[1],Integer.parseInt(novoDado[2]),novoDado[3],Double.parseDouble(novoDado[4]), novoDado[5],posicaoCat, posicaoMed);
-					dados.getProdutos().set(posicao, novoProduto);
+
+					Categoria novaMedida = new Categoria(posicao,novoDado[1]);
+					dados.getCategoria().set(posicao, novaMedida);
 					res = true;
 				}
 
@@ -166,8 +119,8 @@ public class TelaDetalhe implements ActionListener {
 		if(src == botaoExcluir) {
 			boolean res = false;
 
-			if (opcao == 2) {//exclui aluno
-				dados.getProdutos().remove(posicao);
+			if (opcao == 3) {//exclui unidade de Medida
+				dados.getCategoria().remove(posicao);
 				res = true;
 				if (res) mensagemSucessoExclusao(); 
 				else mensagemErroExclusaoAluno(); 
